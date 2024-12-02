@@ -15,3 +15,11 @@ def generate_image(description):
     urllib.request.urlretrieve(image_url, "image.png")
     image = Image.open("image.png")
     return image
+
+
+st.title("Geração de imagens com DALL-E")
+description = st.text_input("Descrição da imagem")
+
+if st.button("Gerar imagem"):
+    image_generated = generate_image(description)
+    st.image(image_generated)
